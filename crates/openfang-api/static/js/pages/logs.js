@@ -1,4 +1,4 @@
-// OpenFang Logs Page — Real-time log viewer (SSE streaming + polling fallback) + Audit Trail tab
+// OpenChief Logs Page — Real-time log viewer (SSE streaming + polling fallback) + Audit Trail tab
 'use strict';
 
 function logsPage() {
@@ -187,7 +187,7 @@ function logsPage() {
       var url = URL.createObjectURL(blob);
       var a = document.createElement('a');
       a.href = url;
-      a.download = 'openfang-logs-' + new Date().toISOString().slice(0, 10) + '.txt';
+      a.download = 'openchief-logs-' + new Date().toISOString().slice(0, 10) + '.txt';
       a.click();
       URL.revokeObjectURL(url);
     },

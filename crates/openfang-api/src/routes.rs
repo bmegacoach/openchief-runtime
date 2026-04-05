@@ -1,4 +1,4 @@
-//! Route handlers for the OpenFang API.
+//! Route handlers for the OpenChief API.
 
 use crate::types::*;
 use axum::extract::{Multipart, Path, Query, State};
@@ -1322,7 +1322,7 @@ pub async fn set_agent_mode(
 /// GET /api/version — Build & version info.
 pub async fn version() -> impl IntoResponse {
     Json(serde_json::json!({
-        "name": "openfang",
+        "name": "openchief",
         "version": env!("CARGO_PKG_VERSION"),
         "build_date": option_env!("BUILD_DATE").unwrap_or("dev"),
         "git_sha": option_env!("GIT_SHA").unwrap_or("unknown"),
@@ -1643,7 +1643,7 @@ const CHANNEL_REGISTRY: &[ChannelMeta] = &[
         fields: &[
             ChannelField { key: "access_token_env", label: "Access Token", field_type: FieldType::Secret, env_var: Some("MATRIX_ACCESS_TOKEN"), required: true, placeholder: "syt_...", advanced: false },
             ChannelField { key: "homeserver_url", label: "Homeserver URL", field_type: FieldType::Text, env_var: None, required: true, placeholder: "https://matrix.org", advanced: false },
-            ChannelField { key: "user_id", label: "Bot User ID", field_type: FieldType::Text, env_var: None, required: false, placeholder: "@openfang:matrix.org", advanced: true },
+            ChannelField { key: "user_id", label: "Bot User ID", field_type: FieldType::Text, env_var: None, required: false, placeholder: "@openchief:matrix.org", advanced: true },
             ChannelField { key: "allowed_rooms", label: "Allowed Room IDs", field_type: FieldType::List, env_var: None, required: false, placeholder: "!abc:matrix.org", advanced: true },
             ChannelField { key: "default_agent", label: "Default Agent", field_type: FieldType::Text, env_var: None, required: false, placeholder: "assistant", advanced: true },
         ],
@@ -1735,7 +1735,7 @@ const CHANNEL_REGISTRY: &[ChannelMeta] = &[
         quick_setup: "Enter your username and paper key",
         setup_type: "form",
         fields: &[
-            ChannelField { key: "username", label: "Username", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openfang_bot", advanced: false },
+            ChannelField { key: "username", label: "Username", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openchief_bot", advanced: false },
             ChannelField { key: "paperkey_env", label: "Paper Key", field_type: FieldType::Secret, env_var: Some("KEYBASE_PAPERKEY"), required: true, placeholder: "word1 word2 word3...", advanced: false },
             ChannelField { key: "allowed_teams", label: "Allowed Teams", field_type: FieldType::List, env_var: None, required: false, placeholder: "team1, team2", advanced: true },
             ChannelField { key: "default_agent", label: "Default Agent", field_type: FieldType::Text, env_var: None, required: false, placeholder: "assistant", advanced: true },
@@ -1753,9 +1753,9 @@ const CHANNEL_REGISTRY: &[ChannelMeta] = &[
         fields: &[
             ChannelField { key: "client_id", label: "Client ID", field_type: FieldType::Text, env_var: None, required: true, placeholder: "abc123def", advanced: false },
             ChannelField { key: "client_secret_env", label: "Client Secret", field_type: FieldType::Secret, env_var: Some("REDDIT_CLIENT_SECRET"), required: true, placeholder: "abc123...", advanced: false },
-            ChannelField { key: "username", label: "Bot Username", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openfang_bot", advanced: false },
+            ChannelField { key: "username", label: "Bot Username", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openchief_bot", advanced: false },
             ChannelField { key: "password_env", label: "Bot Password", field_type: FieldType::Secret, env_var: Some("REDDIT_PASSWORD"), required: true, placeholder: "password", advanced: false },
-            ChannelField { key: "subreddits", label: "Subreddits", field_type: FieldType::List, env_var: None, required: false, placeholder: "openfang, rust", advanced: true },
+            ChannelField { key: "subreddits", label: "Subreddits", field_type: FieldType::List, env_var: None, required: false, placeholder: "openchief, rust", advanced: true },
             ChannelField { key: "default_agent", label: "Default Agent", field_type: FieldType::Text, env_var: None, required: false, placeholder: "assistant", advanced: true },
         ],
         setup_steps: &["Create a Reddit app at reddit.com/prefs/apps (script type)", "Copy Client ID and Secret", "Enter bot credentials below"],
@@ -1997,14 +1997,14 @@ const CHANNEL_REGISTRY: &[ChannelMeta] = &[
         setup_type: "form",
         fields: &[
             ChannelField { key: "server", label: "Server", field_type: FieldType::Text, env_var: None, required: true, placeholder: "irc.libera.chat", advanced: false },
-            ChannelField { key: "nick", label: "Nickname", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openfang", advanced: false },
-            ChannelField { key: "channels", label: "Channels", field_type: FieldType::List, env_var: None, required: false, placeholder: "#openfang, #general", advanced: false },
+            ChannelField { key: "nick", label: "Nickname", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openchief", advanced: false },
+            ChannelField { key: "channels", label: "Channels", field_type: FieldType::List, env_var: None, required: false, placeholder: "#openchief, #general", advanced: false },
             ChannelField { key: "port", label: "Port", field_type: FieldType::Number, env_var: None, required: false, placeholder: "6667", advanced: true },
             ChannelField { key: "use_tls", label: "Use TLS", field_type: FieldType::Text, env_var: None, required: false, placeholder: "false", advanced: true },
             ChannelField { key: "default_agent", label: "Default Agent", field_type: FieldType::Text, env_var: None, required: false, placeholder: "assistant", advanced: true },
         ],
         setup_steps: &["Choose an IRC server", "Enter server, nick, and channels below"],
-        config_template: "[channels.irc]\nserver = \"irc.libera.chat\"\nnick = \"openfang\"",
+        config_template: "[channels.irc]\nserver = \"irc.libera.chat\"\nnick = \"openchief\"",
     },
     ChannelMeta {
         name: "xmpp", display_name: "XMPP/Jabber", icon: "XM",
@@ -2120,12 +2120,12 @@ const CHANNEL_REGISTRY: &[ChannelMeta] = &[
         setup_type: "form",
         fields: &[
             ChannelField { key: "oauth_token_env", label: "OAuth Token", field_type: FieldType::Secret, env_var: Some("TWITCH_OAUTH_TOKEN"), required: true, placeholder: "oauth:abc123...", advanced: false },
-            ChannelField { key: "nick", label: "Bot Nickname", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openfang", advanced: false },
+            ChannelField { key: "nick", label: "Bot Nickname", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openchief", advanced: false },
             ChannelField { key: "channels", label: "Channels (no #)", field_type: FieldType::List, env_var: None, required: true, placeholder: "mychannel", advanced: false },
             ChannelField { key: "default_agent", label: "Default Agent", field_type: FieldType::Text, env_var: None, required: false, placeholder: "assistant", advanced: true },
         ],
         setup_steps: &["Generate an OAuth token at twitchapps.com/tmi", "Enter token, nick, and channel below"],
-        config_template: "[channels.twitch]\noauth_token_env = \"TWITCH_OAUTH_TOKEN\"\nnick = \"openfang\"",
+        config_template: "[channels.twitch]\noauth_token_env = \"TWITCH_OAUTH_TOKEN\"\nnick = \"openchief\"",
     },
     // ── Notifications (4) ───────────────────────────────────────────
     ChannelMeta {
@@ -2135,7 +2135,7 @@ const CHANNEL_REGISTRY: &[ChannelMeta] = &[
         quick_setup: "Just enter a topic name",
         setup_type: "form",
         fields: &[
-            ChannelField { key: "topic", label: "Topic", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openfang-alerts", advanced: false },
+            ChannelField { key: "topic", label: "Topic", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openchief-alerts", advanced: false },
             ChannelField { key: "server_url", label: "Server URL", field_type: FieldType::Text, env_var: None, required: false, placeholder: "https://ntfy.sh", advanced: true },
             ChannelField { key: "token_env", label: "Auth Token", field_type: FieldType::Secret, env_var: Some("NTFY_TOKEN"), required: false, placeholder: "tk_abc123...", advanced: true },
             ChannelField { key: "default_agent", label: "Default Agent", field_type: FieldType::Text, env_var: None, required: false, placeholder: "assistant", advanced: true },
@@ -2181,14 +2181,14 @@ const CHANNEL_REGISTRY: &[ChannelMeta] = &[
         setup_type: "form",
         fields: &[
             ChannelField { key: "host", label: "Host", field_type: FieldType::Text, env_var: None, required: true, placeholder: "mumble.example.com", advanced: false },
-            ChannelField { key: "username", label: "Username", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openfang", advanced: false },
+            ChannelField { key: "username", label: "Username", field_type: FieldType::Text, env_var: None, required: true, placeholder: "openchief", advanced: false },
             ChannelField { key: "password_env", label: "Server Password", field_type: FieldType::Secret, env_var: Some("MUMBLE_PASSWORD"), required: false, placeholder: "password", advanced: true },
             ChannelField { key: "port", label: "Port", field_type: FieldType::Number, env_var: None, required: false, placeholder: "64738", advanced: true },
             ChannelField { key: "channel", label: "Channel", field_type: FieldType::Text, env_var: None, required: false, placeholder: "Root", advanced: true },
             ChannelField { key: "default_agent", label: "Default Agent", field_type: FieldType::Text, env_var: None, required: false, placeholder: "assistant", advanced: true },
         ],
         setup_steps: &["Enter host and username below", "Optionally add a password"],
-        config_template: "[channels.mumble]\nhost = \"\"\nusername = \"openfang\"",
+        config_template: "[channels.mumble]\nhost = \"\"\nusername = \"openchief\"",
     },
     ChannelMeta {
         name: "wecom", display_name: "WeCom", icon: "WC",
@@ -2830,7 +2830,7 @@ pub async fn test_channel(
 /// Send a real test message to a specific channel/chat on the given platform.
 async fn send_channel_test_message(channel_name: &str, target_id: &str) -> Result<(), String> {
     let client = reqwest::Client::new();
-    let test_msg = "OpenFang test message — your channel is connected!";
+    let test_msg = "OpenChief test message — your channel is connected!";
 
     match channel_name {
         "discord" => {
@@ -3393,7 +3393,7 @@ pub async fn health_detail(State(state): State<Arc<AppState>>) -> impl IntoRespo
 
 /// GET /api/metrics — Prometheus text-format metrics.
 ///
-/// Returns counters and gauges for monitoring OpenFang in production:
+/// Returns counters and gauges for monitoring OpenChief in production:
 /// - `openfang_agents_active` — number of active agents
 /// - `openfang_uptime_seconds` — seconds since daemon started
 /// - `openfang_tokens_total` — total tokens consumed (per agent)
@@ -3455,7 +3455,7 @@ pub async fn prometheus_metrics(State(state): State<Arc<AppState>>) -> impl Into
     ));
 
     // Version info
-    out.push_str("# HELP openfang_info OpenFang version and build info.\n");
+    out.push_str("# HELP openfang_info OpenChief version and build info.\n");
     out.push_str("# TYPE openfang_info gauge\n");
     out.push_str(&format!(
         "openfang_info{{version=\"{}\"}} 1\n",
@@ -6391,8 +6391,8 @@ pub async fn a2a_agent_card(State(state): State<Arc<AppState>>) -> impl IntoResp
         )
     } else {
         let card = serde_json::json!({
-            "name": "openfang",
-            "description": "OpenFang Agent OS — no agents spawned yet",
+            "name": "openchief",
+            "description": "OpenChief Agent OS — no agents spawned yet",
             "url": format!("{base_url}/a2a"),
             "version": "0.1.0",
             "capabilities": { "streaming": true },
@@ -10677,7 +10677,7 @@ pub async fn pairing_notify(
     let title = body
         .get("title")
         .and_then(|v| v.as_str())
-        .unwrap_or("OpenFang");
+        .unwrap_or("OpenChief");
     let message = body.get("message").and_then(|v| v.as_str()).unwrap_or("");
     if message.is_empty() {
         return (

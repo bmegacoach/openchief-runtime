@@ -1,4 +1,4 @@
-//! Channel bridge wiring — connects the OpenFang kernel to channel adapters.
+//! Channel bridge wiring — connects the OpenChief kernel to channel adapters.
 //!
 //! Implements `ChannelBridgeHandle` on `OpenFangKernel` and provides the
 //! `start_channel_bridge()` entry point called by the daemon.
@@ -160,14 +160,14 @@ impl ChannelBridgeHandle for KernelBridgeAdapter {
         let mins = (secs % 3600) / 60;
         if hours > 0 {
             format!(
-                "OpenFang status: {}h {}m uptime, {} agent(s)",
+                "OpenChief status: {}h {}m uptime, {} agent(s)",
                 hours,
                 mins,
                 agents.len()
             )
         } else {
             format!(
-                "OpenFang status: {}m uptime, {} agent(s)",
+                "OpenChief status: {}m uptime, {} agent(s)",
                 mins,
                 agents.len()
             )

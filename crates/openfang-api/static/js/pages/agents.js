@@ -1,4 +1,4 @@
-// OpenFang Agents Page — Multi-step spawn wizard, detail view with tabs, file editor, personality presets
+// OpenChief Agents Page — Multi-step spawn wizard, detail view with tabs, file editor, personality presets
 'use strict';
 
 /** Escape a string for use inside TOML triple-quoted strings ("""\n...\n""").

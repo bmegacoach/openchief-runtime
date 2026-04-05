@@ -1,7 +1,7 @@
 {
-  "name": "OpenFang Agent OS",
-  "short_name": "OpenFang",
-  "description": "Open-source Agent Operating System",
+  "name": "OpenChief AI Operating Agency",
+  "short_name": "OpenChief",
+  "description": "AI Operating Agency",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0f",

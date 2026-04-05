@@ -1,4 +1,4 @@
-// OpenFang Hands Page — curated autonomous capability packages
+// OpenChief Hands Page — curated autonomous capability packages
 'use strict';
 
 function handsPage() {

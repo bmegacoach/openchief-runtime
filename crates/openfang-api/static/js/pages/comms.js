@@ -1,4 +1,4 @@
-// OpenFang Comms Page — Agent topology & inter-agent communication feed
+// OpenChief Comms Page — Agent topology & inter-agent communication feed
 'use strict';
 
 function commsPage() {

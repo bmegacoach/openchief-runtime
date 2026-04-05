@@ -1,4 +1,4 @@
-// OpenFang Visual Workflow Builder — Drag-and-drop workflow designer
+// OpenChief Visual Workflow Builder — Drag-and-drop workflow designer
 'use strict';
 
 function workflowBuilder() {

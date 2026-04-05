@@ -1,4 +1,4 @@
-/* OpenFang Theme — Premium design system */
+/* OpenChief Theme — Premium design system */
 
 /* Font imports in index_head.html: Inter (body) + Geist Mono (code) */
 
@@ -20,12 +20,12 @@
   --text-dim: #6B6560;
   --text-muted: #9A958F;
 
-  /* Brand — Orange accent */
-  --accent: #FF5C00;
-  --accent-light: #FF7A2E;
-  --accent-dim: #E05200;
-  --accent-glow: rgba(255, 92, 0, 0.1);
-  --accent-subtle: rgba(255, 92, 0, 0.05);
+  /* Brand — Navy Blue accent */
+  --accent: #4A90D9;
+  --accent-light: #6BA8E8;
+  --accent-dim: #3A7BC8;
+  --accent-glow: rgba(74, 144, 217, 0.1);
+  --accent-subtle: rgba(74, 144, 217, 0.05);
 
   /* Status colors */
   --success: #22C55E;
@@ -49,7 +49,7 @@
 
   /* Chat-specific */
   --agent-bg: #F5F4F2;
-  --user-bg: #FFF3E6;
+  --user-bg: #E6F0FF;
 
   /* Layout */
   --sidebar-width: 240px;
@@ -70,7 +70,7 @@
   --shadow-lg: 0 12px 28px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.05);
   --shadow-xl: 0 20px 40px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.06);
   --shadow-glow: 0 0 40px rgba(0,0,0,0.05);
-  --shadow-accent: 0 4px 16px rgba(255, 92, 0, 0.12);
+  --shadow-accent: 0 4px 16px rgba(74, 144, 217, 0.12);
   --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.5);
 
   /* Typography — dual font system */
@@ -88,24 +88,24 @@
 }
 
 [data-theme="dark"] {
-  --bg: #080706;
-  --bg-primary: #0F0E0E;
-  --bg-elevated: #161413;
-  --surface: #1F1D1C;
-  --surface2: #2A2725;
-  --surface3: #1A1817;
-  --border: #2D2A28;
-  --border-light: #3D3A38;
-  --border-subtle: #232120;
+  --bg: #0A1118;
+  --bg-primary: #0F1824;
+  --bg-elevated: #14202E;
+  --surface: #1A2A3C;
+  --surface2: #223448;
+  --surface3: #162232;
+  --border: #2A3E55;
+  --border-light: #3A5068;
+  --border-subtle: #1E3045;
   --text: #F0EFEE;
   --text-secondary: #C4C0BC;
   --text-dim: #8A8380;
   --text-muted: #5C5754;
-  --accent: #FF5C00;
-  --accent-light: #FF7A2E;
-  --accent-dim: #E05200;
-  --accent-glow: rgba(255, 92, 0, 0.15);
-  --accent-subtle: rgba(255, 92, 0, 0.08);
+  --accent: #4A90D9;
+  --accent-light: #6BA8E8;
+  --accent-dim: #3A7BC8;
+  --accent-glow: rgba(74, 144, 217, 0.15);
+  --accent-subtle: rgba(74, 144, 217, 0.08);
   --success: #4ADE80;
   --success-dim: #22C55E;
   --success-subtle: rgba(74, 222, 128, 0.1);
@@ -124,15 +124,15 @@
   --info-muted: rgba(59, 130, 246, 0.25);
   --border-strong: #4A4644;
   --card-highlight: rgba(255, 255, 255, 0.04);
-  --agent-bg: #1A1817;
-  --user-bg: #2A1A08;
+  --agent-bg: #121E2C;
+  --user-bg: #0D1E33;
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
   --shadow-lg: 0 12px 28px rgba(0,0,0,0.35), 0 4px 10px rgba(0,0,0,0.3);
   --shadow-xl: 0 20px 40px rgba(0,0,0,0.4), 0 8px 16px rgba(0,0,0,0.3);
   --shadow-glow: 0 0 80px rgba(0,0,0,0.6);
-  --shadow-accent: 0 4px 16px rgba(255, 92, 0, 0.2);
+  --shadow-accent: 0 4px 16px rgba(74, 144, 217, 0.2);
   --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.03);
 }
 

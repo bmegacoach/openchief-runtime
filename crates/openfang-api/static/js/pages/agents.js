@@ -582,7 +582,6 @@ function agentsPage() {
       try {
         var manifestToml = template.manifest_toml;
         if (!manifestToml) {
-          // If template doesn't have manifest_toml, fetch it from the API
           var data = await OpenFangAPI.get('/api/templates/' + encodeURIComponent(template.name));
           manifestToml = data.manifest_toml;
         }
@@ -595,6 +594,15 @@ function agentsPage() {
           }
         }
       } catch(e) {
+        // If agent already exists, find it and open chat instead
+        if (e.message && e.message.indexOf('already exists') !== -1) {
+          var existing = Alpine.store('app').agents.find(function(a) { return a.name === template.name; });
+          if (existing) {
+            OpenFangToast.info('Agent "' + template.name + '" already running — opening chat');
+            this.chatWithAgent(existing);
+            return;
+          }
+        }
         OpenFangToast.error('Failed to spawn from template: ' + e.message);
       }
     },
@@ -753,6 +761,14 @@ function agentsPage() {
           this.chatWithAgent({ id: res.agent_id, name: t.name, model_provider: t.provider, model_name: t.model });
         }
       } catch(e) {
+        if (e.message && e.message.indexOf('already exists') !== -1) {
+          var existing = Alpine.store('app').agents.find(function(a) { return a.name === t.name; });
+          if (existing) {
+            OpenFangToast.info('Agent "' + t.name + '" already running — opening chat');
+            this.chatWithAgent(existing);
+            return;
+          }
+        }
         OpenFangToast.error('Failed to spawn agent: ' + e.message);
       }
     }

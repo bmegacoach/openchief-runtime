@@ -162,11 +162,19 @@ pub async fn spawn_agent(
             )
         }
         Err(e) => {
+            let msg = e.to_string();
             tracing::warn!("Spawn failed: {e}");
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(serde_json::json!({"error": "Agent spawn failed"})),
-            )
+            if msg.contains("already exists") {
+                (
+                    StatusCode::CONFLICT,
+                    Json(serde_json::json!({"error": msg, "code": "already_exists"})),
+                )
+            } else {
+                (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    Json(serde_json::json!({"error": msg})),
+                )
+            }
         }
     }
 }

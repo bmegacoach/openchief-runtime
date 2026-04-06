@@ -68,7 +68,7 @@ impl std::fmt::Display for HandCategory {
 }
 
 /// Type of requirement check.
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum RequirementType {
     /// A binary must exist on PATH.

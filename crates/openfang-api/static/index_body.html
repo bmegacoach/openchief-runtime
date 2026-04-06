@@ -2926,7 +2926,7 @@ args = ["-y", "@modelcontextprotocol/server-filesystem", "/path"]</pre>
 
                         <!-- Text type -->
                         <template x-if="setting.setting_type === 'text'">
-                          <input type="text" class="form-input" x-model="settingsValues[setting.key]" :placeholder="setting.label" style="width:100%">
+                          <input :type="setting.key.indexOf('token') !== -1 || setting.key.indexOf('key') !== -1 || setting.key.indexOf('secret') !== -1 ? 'password' : 'text'" class="form-input" x-model="settingsValues[setting.key]" :placeholder="setting.label" style="width:100%;font-family:var(--font-mono,monospace);font-size:13px;padding:8px 12px;box-sizing:border-box">
                         </template>
                       </div>
                     </template>

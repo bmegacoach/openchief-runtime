@@ -294,11 +294,31 @@ impl HandRegistry {
             .get(hand_id)
             .ok_or_else(|| HandError::NotFound(hand_id.to_string()))?;
 
+        // Collect config from any active instance so ApiKey requirements can
+        // be satisfied by values saved through the settings UI, not just env vars.
+        let instance_config: Option<HashMap<String, serde_json::Value>> = self
+            .instances
+            .iter()
+            .find(|e| e.hand_id == hand_id)
+            .map(|e| e.config.clone());
+
         let results: Vec<(HandRequirement, bool)> = def
             .requires
             .iter()
             .map(|req| {
-                let satisfied = check_requirement(req);
+                let mut satisfied = check_requirement(req);
+                // For ApiKey requirements, also check if the key was saved in
+                // the hand instance settings (lowercase version of the env var).
+                if !satisfied && req.requirement_type == RequirementType::ApiKey {
+                    if let Some(ref cfg) = instance_config {
+                        let setting_key = req.check_value.to_lowercase();
+                        satisfied = cfg
+                            .get(&setting_key)
+                            .and_then(|v| v.as_str())
+                            .map(|v| !v.is_empty())
+                            .unwrap_or(false);
+                    }
+                }
                 (req.clone(), satisfied)
             })
             .collect();

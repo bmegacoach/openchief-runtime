@@ -32,12 +32,16 @@ All agents share memory scope `openchief.*` and can delegate to each other via `
 - **Tools:** file_read/write, memory_store/recall, web_fetch, shell_exec, agent_send/list
 - **Template:** `agents/openchief-coo/agent.toml`
 
-### CFO — Chief Financial Officer
-- **Domain:** Finance, investment analysis, tokenomics, ROI, compliance
-- **Products:** Founders Club tiers, CAMP Alpha pricing, USDca protocol economics, GBB FX
-- **Disclaimers:** Always includes risk disclosures and "consult a licensed financial advisor"
-- **Tools:** file_read/write, memory_store/recall, web_fetch, agent_send/list
-- **Template:** `agents/openchief-cfo/agent.toml`
+### CFO — Chief Financial Officer + Head of Portfolio Management
+- **Domain:** Finance, portfolio operations, trading oversight, risk, blockchain ops, compliance
+- **Systems reporting to CFO:**
+  - **Portfolio Manager** (QuantVPS) — 25+ trading accounts, 5 desks (Apex/HL/Polymarket/Axi/AMP), 13 strategies, 10-point risk engine
+  - **Moltworker** (Cloudflare) — Treasury management, smart contract ops, DeFi activity, always-on isolated blockchain layer
+- **API access:** `/portfolio/summary`, `/portfolio/positions`, `/portfolio/risk`, `/portfolio/accounts`, Moltworker REST
+- **Proactive:** SWOT analysis, risk alerts (drawdown/heat/correlated losses), daily P&L, budget oversight
+- **GBB FX:** 50% perf fee, 20-50% growth target, agents earn 30-40%, bi-weekly, $5K min deposit
+- **Tools:** web_fetch (CRITICAL for live data), file_read/write, memory_store/recall, shell_exec, agent_send/list
+- **Template:** `agents/openchief-cfo/agent.toml` (v0.2.0)
 
 ### CMO — Chief Marketing Officer
 - **Domain:** Marketing, campaigns, content strategy, sponsor acquisition, enrollment growth

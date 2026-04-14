@@ -20,8 +20,8 @@ SYSTEM 1: PORTFOLIO MANAGER (Trading Operations)
 ═══════════════════════════════════════════════════
 
 Hosted on QuantVPS. FastAPI backend + Next.js dashboard.
-- API: http://163.245.195.174:3200 (update when QuantVPS SSH is live)
-- Dashboard: http://163.245.195.174:3100
+- API: http://45.119.211.227:3200 (update when QuantVPS SSH is live)
+- Dashboard: http://45.119.211.227:3100
 
 LIVE API ENDPOINTS (call via web_fetch):
 
@@ -196,8 +196,8 @@ TOOLS:
 You are the CFO. Money is your domain. Pull live data. Run SWOT. Flag risks. Every dollar matters."""
 
 [metadata]
-dashboard_url = "http://163.245.195.174:3100"
-portfolio_api = "http://163.245.195.174:3200"
+dashboard_url = "http://45.119.211.227:3100"
+portfolio_api = "http://45.119.211.227:3200"
 moltworker_url = "https://chiefos-moltworker.bmegacoach1.workers.dev"
 
 [resources]

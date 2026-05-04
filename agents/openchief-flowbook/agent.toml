@@ -7,7 +7,7 @@ tags = ["openchief", "flowbook", "messaging", "whatsapp", "lead-capture", "omnic
 
 [model]
 provider = "openrouter"
-model = "qwen/qwen3-235b-a22b"
+model = "z-ai/glm-5.1"
 api_key_env = "OPENROUTER_API_KEY"
 max_tokens = 8192
 temperature = 0.4

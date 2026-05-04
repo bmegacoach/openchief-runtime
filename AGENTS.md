@@ -61,9 +61,10 @@ All agents share memory scope `openchief.*` and can delegate to each other via `
 
 All C-Suite agents use:
 - **Provider:** OpenRouter
-- **Model:** `qwen/qwen3-235b-a22b` (Qwen 3.6, 235B parameters)
+- **Model:** `z-ai/glm-5.1` (GLM 5.1 — long-horizon agentic model)
 - **API Key Env:** `OPENROUTER_API_KEY`
-- **No fallback models** — Qwen 3.6 only
+- **Fallback 1:** Qwen 3.6 (`qwen/qwen3-235b-a22b`) via OpenRouter
+- **Fallback 2:** Gemma 4 (`gemma4:latest`) via Ollama local (free)
 
 ## Knowledge Base
 

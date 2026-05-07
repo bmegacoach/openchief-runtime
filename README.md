@@ -1,9 +1,33 @@
 <p align="center">
-  <img src="public/assets/openfang-logo.png" width="160" alt="OpenFang Logo" />
+  <img src="public/assets/openchief-logo.jpg" width="160" alt="OpenChief Logo" />
 </p>
 
-<h1 align="center">OpenFang</h1>
-<h3 align="center">The Agent Operating System</h3>
+<h1 align="center">OpenChief Runtime</h1>
+<h3 align="center">A C-Suite of AI Executives, Powered by OpenFang</h3>
+
+<p align="center">
+  Seven autonomous executive agents — <strong>CEO, CFO, CMO, COO, CTO, Papi, Flowbook</strong> —
+  running on a hardened Rust agent OS. Default model: <code>z-ai/glm-5.1</code> via OpenRouter.
+  <br/>The CFO has live read access to a real trading portfolio API and a Cloudflare blockchain worker.
+</p>
+
+<p align="center">
+  <a href="agents/">Agent Templates</a> &bull;
+  <a href="AGENTS.md">C-Suite Spec</a> &bull;
+  <a href="https://github.com/RightNow-AI/openfang">Upstream OpenFang</a>
+</p>
+
+<blockquote>
+  <strong>This is a fork of <a href="https://github.com/RightNow-AI/openfang">RightNow-AI/openfang</a></strong>
+  with a UI rebrand (navy theme), seven OpenChief C-Suite agent templates,
+  CoachAI ecosystem RAG knowledge base, and the
+  <a href="agents/openchief-cfo/agent.toml">CFO ↔ Portfolio Manager + Moltworker integration</a>.
+  Upstream Rust kernel and core features remain intact and tracked.
+</blockquote>
+
+---
+
+<h2 align="center">Built on OpenFang</h2>
 
 <p align="center">
   Open-source Agent OS built in Rust. 137K LOC. 14 crates. 1,767+ tests. Zero clippy warnings.<br/>
